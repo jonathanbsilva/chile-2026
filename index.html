@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hub da viagem ao Chile, agosto de 2026.">
+  <title>Chile 2026 · Hub da viagem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="access" class="access-shell">
+    <section class="access-card" aria-labelledby="access-title">
+      <p class="eyebrow">CHILE · INVERNO 2026</p>
+      <h1 id="access-title">Um caderno para a viagem.</h1>
+      <p>08–16 de agosto · Santiago &amp; El Colorado</p>
+      <form id="access-form">
+        <label for="access-password">Senha da viagem</label>
+        <div class="access-row">
+          <input id="access-password" name="password" type="password" autocomplete="current-password" required>
+          <button type="submit">Entrar</button>
+        </div>
+        <p id="access-error" class="form-error" role="alert" hidden>Senha incorreta.</p>
+      </form>
+      <small>Barreira casual: esta página é pública e não guarda documentos nem dados sensíveis.</small>
+    </section>
+  </main>
+
+  <div id="app" hidden>
+    <header class="hero" id="inicio">
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="wordmark" href="#inicio">CHILE <span>26</span></a>
+        <div class="nav-links">
+          <a href="#roteiro">Roteiro</a><a href="#reservas">Reservas</a><a href="#checklist">Checklist</a>
+        </div>
+      </nav>
+      <div class="hero-copy">
+        <p class="eyebrow">08 — 16 AGO · 2026</p>
+        <h1>Santiago,<br><em>depois</em> montanha.</h1>
+        <p class="lede">Jonathan, Mel, Maria Luiza e Ana Luisa.<br>O essencial para a semana no Chile.</p>
+        <p id="countdown" class="countdown" aria-live="polite"></p>
+      </div>
+      <div class="mountains" aria-hidden="true"><i></i><i></i><i></i></div>
+    </header>
+
+    <main>
+      <section class="section trip-strip" aria-labelledby="overview-title">
+        <div><p class="eyebrow">EM UMA LINHA</p><h2 id="overview-title">Nove dias, quatro viajantes e uma pausa nos Andes.</h2></div>
+        <dl class="facts"><div><dt>Ida</dt><dd>GRU → SCL<br><strong>08 AGO · 14:55</strong></dd></div><div><dt>Montanha</dt><dd>El Colorado<br><strong>12–14 AGO</strong></dd></div><div><dt>Volta</dt><dd>SCL → GRU<br><strong>16 AGO · 15:45</strong></dd></div></dl>
+      </section>
+
+      <section class="section itinerary" id="roteiro" aria-labelledby="itinerary-title">
+        <div class="section-heading"><p class="eyebrow">01 · ROTEIRO</p><h2 id="itinerary-title">A semana, dia a dia.</h2></div>
+        <ol class="timeline">
+          <li class="confirmed"><time>08<br><span>SÁB</span></time><div><strong>Chegada em Santiago</strong><p>LA8182 · GRU 14:55 → SCL 18:05</p></div><b>confirmado</b></li>
+          <li><time>09–11<br><span>DOM–TER</span></time><div><strong>Santiago</strong><p>Hospedagem e programação em aberto.</p></div><b>em aberto</b></li>
+          <li class="confirmed"><time>12<br><span>QUA</span></time><div><strong>Subida para El Colorado</strong><p>Check-in no Airbnb às 17:00.</p></div><b>confirmado</b></li>
+          <li><time>13<br><span>QUI</span></time><div><strong>Dia de neve</strong><p>El Colorado, montanha e descanso.</p></div><b>em aberto</b></li>
+          <li class="confirmed"><time>14<br><span>SEX</span></time><div><strong>Retorno a Santiago</strong><p>Checkout às 12:00; definir base final.</p></div><b>parcial</b></li>
+          <li><time>15<br><span>SÁB</span></time><div><strong>Santiago</strong><p>Último dia cheio na cidade.</p></div><b>em aberto</b></li>
+          <li class="confirmed"><time>16<br><span>DOM</span></time><div><strong>Volta para São Paulo</strong><p>LA714 · SCL 15:45 → GRU 20:45</p></div><b>confirmado</b></li>
+        </ol>
+      </section>
+
+      <section class="section reservations" id="reservas" aria-labelledby="reservations-title">
+        <div class="section-heading"><p class="eyebrow">02 · RESERVAS &amp; LOGÍSTICA</p><h2 id="reservations-title">O que já está de pé.</h2></div>
+        <div class="reservation-grid">
+          <article class="reservation-card confirmed"><p class="card-type">VOOS · LATAM</p><h3>São Paulo ↔ Santiago</h3><p>LA8182 na ida e LA714 na volta. Quatro passageiros.</p><span>comprado</span></article>
+          <article class="reservation-card confirmed"><p class="card-type">HOSPEDAGEM · AIRBNB</p><h3>El Colorado / Lo Barnechea</h3><p>12/08, 17:00 → 14/08, 12:00. Quatro hóspedes.</p><span>confirmado</span></article>
+          <article class="reservation-card confirmed"><p class="card-type">CARRO</p><h3>Reserva concluída</h3><p>R$ 3.000,00. Falta registrar locadora, seguro e retirada/devolução.</p><span>reservado</span></article>
+          <article class="reservation-card pending"><p class="card-type">HOSPEDAGEM · SANTIAGO</p><h3>Base antes e depois da montanha</h3><p>08–12 e 14–16 ainda precisam de reserva.</p><span>pendente</span></article>
+        </div>
+        <aside class="note"><strong>Estrada de montanha:</strong> antes da subida, confirmar correntes de neve, seguro, categoria do veículo e permissão para El Colorado/Farellones.</aside>
+      </section>
+
+      <section class="section costs" id="gastos" aria-labelledby="costs-title">
+        <div class="section-heading"><p class="eyebrow">03 · GASTOS COMPARTILHADOS</p><h2 id="costs-title">O que sabemos até aqui.</h2></div>
+        <div class="cost-total"><p>Total conhecido</p><strong>R$ 17.861,92</strong><span>Não inclui hotel em Santiago, alimentação, seguro ou extras.</span></div>
+        <div class="table-wrap"><table><caption>Divisão conhecida: Maria participa com 1/4 dos custos compartilhados.</caption><thead><tr><th>Item</th><th>Total</th><th>Parte Maria</th><th>Status</th></tr></thead><tbody><tr><td>Passagens LATAM</td><td>R$ 10.470,56</td><td>R$ 2.617,64</td><td><span class="paid">recebido · 06/07</span></td></tr><tr><td>Airbnb El Colorado</td><td>R$ 4.391,36</td><td>R$ 1.097,84</td><td>pendente</td></tr><tr><td>Carro</td><td>R$ 3.000,00</td><td>R$ 750,00</td><td>pendente</td></tr></tbody><tfoot><tr><th>Saldo conhecido pendente</th><td></td><td><strong>R$ 1.847,84</strong></td><td></td></tr></tfoot></table></div>
+      </section>
+
+      <section class="section checklist-section" id="checklist" aria-labelledby="checklist-title">
+        <div class="section-heading"><p class="eyebrow">04 · CHECKLIST</p><h2 id="checklist-title">Para fechar antes de embarcar.</h2><p>Seu progresso fica salvo apenas neste navegador.</p></div>
+        <div class="checklist" role="list">
+          <label><input type="checkbox" data-checklist-item="santiago-stay"><span>Reservar hospedagem em Santiago</span></label>
+          <label><input type="checkbox" data-checklist-item="car-details"><span>Registrar locadora, seguro e correntes de neve</span></label>
+          <label><input type="checkbox" data-checklist-item="travel-insurance"><span>Verificar seguro-viagem</span></label>
+          <label><input type="checkbox" data-checklist-item="documents"><span>Verificar documentação de todos</span></label>
+          <label><input type="checkbox" data-checklist-item="transfers"><span>Planejar SCL ↔ Santiago e Santiago ↔ El Colorado</span></label>
+          <label><input type="checkbox" data-checklist-item="itinerary"><span>Fechar roteiro e restaurantes</span></label>
+        </div>
+      </section>
+
+      <section class="section references" aria-labelledby="references-title">
+        <div class="section-heading"><p class="eyebrow">05 · SALVOS</p><h2 id="references-title">Para quando a cidade chamar.</h2></div>
+        <div class="saved-grid"><article><span>JANTAR</span><h3>Karai</h3><p>Restaurante salvo para Santiago.</p></article><article><span>JANTAR</span><h3>Ambrosia</h3><p>Restaurante salvo para Santiago.</p></article><article><span>BASE</span><h3>Providencia</h3><p>Região sugerida: Tobalaba, Los Leones ou Costanera Center.</p></article></div>
+      </section>
+    </main>
+    <footer>Chile 2026 · dados de planejamento, sem documentos ou credenciais.</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
