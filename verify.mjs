@@ -27,7 +27,10 @@ for (const anchor of ['#calendario', '#roteiro', '#reservas', '#gastos', '#check
   assert.ok(html.includes(`href="${anchor}"`), `missing section menu link: ${anchor}`);
 }
 assert.ok(html.includes('Calendário da viagem'), 'calendar section must exist');
-for (const forbidden of ['passaporte', 'código de reserva', 'numero de cartão', 'número de cartão']) {
+for (const checklistText of ['Documentos e comprovantes', 'Segunda pele', 'Notebook e carregador', 'Seguro-viagem', 'Cartões físicos', 'Comprovantes impressos']) {
+  assert.ok(html.includes(checklistText), `missing detailed checklist item: ${checklistText}`);
+}
+for (const forbidden of ['código de reserva', 'numero de cartão', 'número de cartão', 'número do passaporte']) {
   assert.ok(!html.toLowerCase().includes(forbidden), `sensitive content: ${forbidden}`);
 }
 for (const hook of ['chile-2026-access', 'chile-2026-checklist', 'access-form', 'countdown']) {
