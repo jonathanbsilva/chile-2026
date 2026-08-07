@@ -20,6 +20,10 @@ for (const text of [
   'Ambrosia',
   'data-checklist-item',
 ]) assert.ok(html.includes(text), `missing content: ${text}`);
+for (const anchor of ['#calendario', '#roteiro', '#reservas', '#gastos', '#checklist', '#salvos']) {
+  assert.ok(html.includes(`href="${anchor}"`), `missing section menu link: ${anchor}`);
+}
+assert.ok(html.includes('Calendário da viagem'), 'calendar section must exist');
 for (const forbidden of ['passaporte', 'código de reserva', 'numero de cartão', 'número de cartão']) {
   assert.ok(!html.toLowerCase().includes(forbidden), `sensitive content: ${forbidden}`);
 }
