@@ -16,6 +16,9 @@ for (const text of [
   'Airbnb confirmado',
   'Bairro Itália',
   'valor não informado',
+  'Frio na cidade, neve na montanha.',
+  'Pancadas de neve',
+  'Open-Meteo',
   'SUV 4x4 no aeroporto SCL',
   'El Colorado',
   'Karai',
@@ -26,7 +29,7 @@ assert.equal((html.match(/>recebido</g) ?? []).length, 3, 'Maria should have thr
 for (const plannedDay of ['Farellones', 'Vale Nevado', 'trabalho remoto', 'Sábado livre']) {
   assert.ok(html.includes(plannedDay), `missing planned itinerary detail: ${plannedDay}`);
 }
-for (const anchor of ['#calendario', '#roteiro', '#reservas', '#gastos', '#checklist', '#salvos']) {
+for (const anchor of ['#calendario', '#clima', '#roteiro', '#reservas', '#gastos', '#checklist', '#salvos']) {
   assert.ok(html.includes(`href="${anchor}"`), `missing section menu link: ${anchor}`);
 }
 assert.ok(html.includes('Calendário da viagem'), 'calendar section must exist');
@@ -39,7 +42,7 @@ for (const checklistText of ['Documentos e comprovantes', 'Segunda pele', 'Noteb
 for (const forbidden of ['código de reserva', 'numero de cartão', 'número de cartão', 'número do passaporte']) {
   assert.ok(!html.toLowerCase().includes(forbidden), `sensitive content: ${forbidden}`);
 }
-for (const hook of ['chile-2026-access', 'chile-2026-checklist', 'access-form', 'countdown']) {
+for (const hook of ['chile-2026-access', 'chile-2026-checklist', 'access-form', 'countdown', 'URLSearchParams', "get('senha')", 'history.replaceState']) {
   assert.ok(app.includes(hook), `missing behavior hook: ${hook}`);
 }
 

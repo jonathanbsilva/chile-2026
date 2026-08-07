@@ -15,7 +15,14 @@ function unlock() {
   updateCountdown();
 }
 
-if (localStorage.getItem(ACCESS_KEY) === 'yes') unlock();
+const linkPassword = new URLSearchParams(window.location.search).get('senha');
+if (linkPassword === PASSWORD) {
+  localStorage.setItem(ACCESS_KEY, 'yes');
+  history.replaceState(null, '', `${window.location.pathname}${window.location.hash}`);
+  unlock();
+} else if (localStorage.getItem(ACCESS_KEY) === 'yes') {
+  unlock();
+}
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
