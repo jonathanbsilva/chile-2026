@@ -20,6 +20,9 @@ for (const text of [
   'Ambrosia',
   'data-checklist-item',
 ]) assert.ok(html.includes(text), `missing content: ${text}`);
+for (const plannedDay of ['Farellones', 'Vale Nevado', 'trabalho remoto', 'Sábado livre']) {
+  assert.ok(html.includes(plannedDay), `missing planned itinerary detail: ${plannedDay}`);
+}
 for (const anchor of ['#calendario', '#roteiro', '#reservas', '#gastos', '#checklist', '#salvos']) {
   assert.ok(html.includes(`href="${anchor}"`), `missing section menu link: ${anchor}`);
 }
