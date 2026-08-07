@@ -11,8 +11,10 @@ const html = read('index.html');
 const app = read('app.js');
 for (const text of [
   '08–16 de agosto',
-  'R$ 17.861,92',
-  'R$ 1.847,84',
+  'R$ 19.982,48',
+  'R$ 2.377,98',
+  'Airbnb confirmado',
+  'SUV 4x4 no aeroporto SCL',
   'El Colorado',
   'Karai',
   'Ambrosia',
