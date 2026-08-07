@@ -25,11 +25,10 @@ for (const hook of ['chile-2026-access', 'chile-2026-checklist', 'access-form', 
   assert.ok(app.includes(hook), `missing behavior hook: ${hook}`);
 }
 
-if (existsSync('.github/workflows/pages.yml')) {
-  const workflow = read('.github/workflows/pages.yml');
-  for (const action of ['actions/configure-pages', 'actions/upload-pages-artifact', 'actions/deploy-pages']) {
-    assert.ok(workflow.includes(action), `missing Pages action: ${action}`);
-  }
+assert.ok(existsSync('.github/workflows/pages.yml'), 'Pages workflow must exist');
+const workflow = read('.github/workflows/pages.yml');
+for (const action of ['actions/configure-pages', 'actions/upload-pages-artifact', 'actions/deploy-pages']) {
+  assert.ok(workflow.includes(action), `missing Pages action: ${action}`);
 }
 
 console.log('verify: passed');
