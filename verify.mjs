@@ -14,6 +14,8 @@ for (const text of [
   'R$ 19.982,48',
   'R$ 747,04',
   'Airbnb confirmado',
+  'Bairro Itália',
+  'valor não informado',
   'SUV 4x4 no aeroporto SCL',
   'El Colorado',
   'Karai',
