@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+.vscode/
+
+# Build output and local tooling
+node_modules/
+dist/
+coverage/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Temporary artifacts
+*.log
