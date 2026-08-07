@@ -12,7 +12,7 @@ const app = read('app.js');
 for (const text of [
   '08–16 de agosto',
   'R$ 19.982,48',
-  'R$ 2.377,98',
+  'R$ 747,04',
   'Airbnb confirmado',
   'SUV 4x4 no aeroporto SCL',
   'El Colorado',
@@ -20,6 +20,7 @@ for (const text of [
   'Ambrosia',
   'data-checklist-item',
 ]) assert.ok(html.includes(text), `missing content: ${text}`);
+assert.equal((html.match(/>recebido</g) ?? []).length, 3, 'Maria should have three received payments');
 for (const plannedDay of ['Farellones', 'Vale Nevado', 'trabalho remoto', 'Sábado livre']) {
   assert.ok(html.includes(plannedDay), `missing planned itinerary detail: ${plannedDay}`);
 }
@@ -27,6 +28,9 @@ for (const anchor of ['#calendario', '#roteiro', '#reservas', '#gastos', '#check
   assert.ok(html.includes(`href="${anchor}"`), `missing section menu link: ${anchor}`);
 }
 assert.ok(html.includes('Calendário da viagem'), 'calendar section must exist');
+for (const itinerarySuggestion of ['Parque Metropolitano', 'Sky Costanera', 'Barrio Lastarria', 'vinícola em Pirque']) {
+  assert.ok(html.includes(itinerarySuggestion), `missing itinerary suggestion: ${itinerarySuggestion}`);
+}
 for (const checklistText of ['Documentos e comprovantes', 'Segunda pele', 'Notebook e carregador', 'Seguro-viagem', 'Cartões físicos', 'Comprovantes impressos']) {
   assert.ok(html.includes(checklistText), `missing detailed checklist item: ${checklistText}`);
 }
