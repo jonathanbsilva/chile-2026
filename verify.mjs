@@ -13,7 +13,7 @@ for (const text of [
   '08–16 de agosto',
   'R$ 19.982,48',
   'R$ 747,04',
-  'Airbnb confirmado',
+  'Santiago · dia externo',
   'Bairro Itália',
   'valor não informado',
   'Frio na cidade, neve na montanha.',
@@ -31,18 +31,28 @@ for (const text of [
   'não substitui a cobertura contra terceiros',
   'El Colorado',
   'Karai',
+  'Cerro San Cristóbal pela manhã',
+  'Se o trabalho liberar',
+  'até 14h',
+  'Bairro Itália/Nuñoa',
+  'Sábado indoor',
+  'Zerando Rental',
+  '10:00',
+  'Juan Valdez',
+  'Café Raíz',
+  'reservar horário na Zerando',
   'Ambrosia',
   'data-checklist-item',
 ]) assert.ok(html.includes(text), `missing content: ${text}`);
 assert.equal((html.match(/>recebido</g) ?? []).length, 3, 'Maria should have three received payments');
-for (const plannedDay of ['Farellones', 'Vale Nevado', 'trabalho remoto', 'Sábado livre']) {
+for (const plannedDay of ['Farellones', 'Vale Nevado', 'tarde/noite flexíveis', 'Sábado indoor']) {
   assert.ok(html.includes(plannedDay), `missing planned itinerary detail: ${plannedDay}`);
 }
 for (const anchor of ['#calendario', '#clima', '#roteiro', '#reservas', '#gastos', '#checklist', '#salvos']) {
   assert.ok(html.includes(`href="${anchor}"`), `missing section menu link: ${anchor}`);
 }
 assert.ok(html.includes('Calendário da viagem'), 'calendar section must exist');
-for (const itinerarySuggestion of ['Museo Precolombino', 'Sky Costanera', 'Karai', 'Ambrosia', 'vinícola em Pirque']) {
+for (const itinerarySuggestion of ['Museo Chileno de Arte Precolombino', 'Sky Costanera', 'Karai', 'Ambrosia', 'Parque Bicentenario']) {
   assert.ok(html.includes(itinerarySuggestion), `missing itinerary suggestion: ${itinerarySuggestion}`);
 }
 for (const checklistText of ['Documentos e comprovantes', 'Segunda pele', 'Notebook e carregador', 'Seguro-viagem', 'Cartões físicos', 'Comprovantes impressos', 'Tarjeta de Turismo', 'Declaração SAG', 'esporte de neve', 'mal de altitude']) {
@@ -50,6 +60,9 @@ for (const checklistText of ['Documentos e comprovantes', 'Segunda pele', 'Noteb
 }
 for (const forbidden of ['código de reserva', 'numero de cartão', 'número de cartão', 'número do passaporte']) {
   assert.ok(!html.toLowerCase().includes(forbidden), `sensitive content: ${forbidden}`);
+}
+for (const privatePattern of [/(?:Cerro|Emilio)\s+\p{L}+\s+\d{3,4}/iu, /\bDpto\s+\d+\b/i]) {
+  assert.ok(!privatePattern.test(html), `sensitive location or Wi-Fi marker: ${privatePattern}`);
 }
 for (const hook of ['chile-2026-access', 'chile-2026-checklist', 'access-form', 'countdown', 'URLSearchParams', "get('senha')", 'history.replaceState']) {
   assert.ok(app.includes(hook), `missing behavior hook: ${hook}`);
