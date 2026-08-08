@@ -25,6 +25,10 @@ for (const text of [
   'Neve prevista',
   'Open-Meteo',
   'SUV 4x4 no aeroporto SCL',
+  'Seguros e proteções',
+  'US$ 175.000',
+  'CDW/LDW',
+  'não substitui a cobertura contra terceiros',
   'El Colorado',
   'Karai',
   'Ambrosia',
@@ -41,7 +45,7 @@ assert.ok(html.includes('Calendário da viagem'), 'calendar section must exist')
 for (const itinerarySuggestion of ['Museo Precolombino', 'Sky Costanera', 'Karai', 'Ambrosia', 'vinícola em Pirque']) {
   assert.ok(html.includes(itinerarySuggestion), `missing itinerary suggestion: ${itinerarySuggestion}`);
 }
-for (const checklistText of ['Documentos e comprovantes', 'Segunda pele', 'Notebook e carregador', 'Seguro-viagem', 'Cartões físicos', 'Comprovantes impressos', 'Tarjeta de Turismo', 'Declaração SAG', 'esportes de neve', 'mal de altitude']) {
+for (const checklistText of ['Documentos e comprovantes', 'Segunda pele', 'Notebook e carregador', 'Seguro-viagem', 'Cartões físicos', 'Comprovantes impressos', 'Tarjeta de Turismo', 'Declaração SAG', 'esporte de neve', 'mal de altitude']) {
   assert.ok(html.includes(checklistText), `missing detailed checklist item: ${checklistText}`);
 }
 for (const forbidden of ['código de reserva', 'numero de cartão', 'número de cartão', 'número do passaporte']) {
